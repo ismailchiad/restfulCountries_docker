@@ -8,10 +8,10 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      # Replace this with a real test runner invocation
+      - python/install-packages
       - run:
-          name: Run tests
-          command: echo 'replace me with real tests!' && false
+          name: Install tests dependencies
+          command: pip install pytest pytest-cov
   build:
     docker:
       - image: cimg/base:stable
